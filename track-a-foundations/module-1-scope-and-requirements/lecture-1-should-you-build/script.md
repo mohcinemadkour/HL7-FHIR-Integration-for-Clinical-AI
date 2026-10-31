@@ -1,7 +1,7 @@
 # Module 1 · Lecture 1 — Should you build this integration?
 
 Recording script — the speaker notes from each slide, in order.
-About 2915 words, roughly 21 minutes at a natural pace.
+About 2790 words, roughly 20 minutes at a natural pace.
 
 
 ## Slide 1 — Should you build this integration?
@@ -68,19 +68,13 @@ If the score lands where nobody looks, or after the decision is made, the pipeli
 
 ## Slide 6 — Five questions before any code
 
-So here’s the tool for this lecture. I call it the Build Check: five questions you answer before anyone writes code.
+This is the tool for this lecture: the Build Check. Five questions, answered before anyone writes code.
 
-One, Decision: what decision changes, and who acts on it?
-Two, Data: is the data actually there, on time, and good enough to trust?
-Three, Lightest path: what is the simplest integration pattern that would work?
-Four, Ownership: who owns this after go-live — the feed, the model and the alert?
-Five, Proof: how will we know it worked, and when would we turn it off?
+Decision, data, lightest path, ownership and proof. You score each one Go, Caution or Stop.
 
-You score each question Go, Caution or Stop. I’ll show you how to turn those scores into a decision at the end.
+It takes one working session with the requester and the interface team, and it ends in a one-page record.
 
-Two things about this check. It’s fast — for most requests you can do it in one working session with the clinical requester and someone from the interface team. And it’s written down. The output isn’t a feeling, it’s a one-page record you can show to anyone who asks why you built something, or why you didn’t.
-
-To make this concrete, I’ll run every question on the sepsis risk pipeline you’ll build in Track C.
+I’ll run each question on our sepsis pipeline.
 
 ## Slide 7 — What decision changes — and who acts on it?
 
