@@ -1,7 +1,7 @@
 # Module 1 · Lecture 1 — Should you build this integration?
 
 Recording script — the speaker notes from each slide, in order.
-About 3042 words, roughly 22 minutes at a natural pace.
+About 2915 words, roughly 21 minutes at a natural pace.
 
 
 ## Slide 1 — Should you build this integration?
@@ -58,19 +58,13 @@ So when someone asks “how much will it cost?”, the honest answer always has 
 
 ## Slide 5 — Technically perfect. Clinically ignored.
 
-Now the first question: what decision does it change?
+Here’s a failure you’ll never see in an incident report.
 
-Here’s a failure pattern you’ll see again and again in clinical AI, and it never shows up in an incident report.
+On the left, the pipeline is perfect: the feed is up, the model scores every hour, zero errors in thirty days.
 
-On the left is the pipeline dashboard. The feed is up. The model scores every patient every hour. The results are written back to the EHR as FHIR resources. Zero errors in thirty days. From an engineering point of view, it’s a success.
+On the right is the question nobody asked: who acted on the last score?
 
-On the right is the question nobody checked: who acted on the last score? Because if the score lands in a tab nobody opens, or in an inbox nobody reads, or arrives after the decision has already been made — the pipeline changed nothing. It’s just an expensive way to store numbers.
-
-This happens because projects start from data availability — “we can get the vitals, let’s build a model” — instead of from a decision — “the rapid response nurse needs to know earlier, at this point in her workflow.”
-
-[Optional: add your own example here — a model or dashboard you saw, or built, that worked technically but wasn’t used, and why.]
-
-So everything that follows starts from the decision, not from the data.
+If the score lands where nobody looks, or after the decision is made, the pipeline changed nothing. So we start from the decision, not from the data.
 
 ## Slide 6 — Five questions before any code
 

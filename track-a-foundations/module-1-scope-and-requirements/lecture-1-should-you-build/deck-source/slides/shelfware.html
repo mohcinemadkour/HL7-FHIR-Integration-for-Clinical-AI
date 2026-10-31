@@ -15,17 +15,11 @@
 <p style="font-size:28px;line-height:1.4;color:#4A5563">A score in a tab nobody opens changes nothing.</p>
 </div>
 </div>
-<aside>Now the first question: what decision does it change?
+<aside>Here’s a failure you’ll never see in an incident report.
 
-Here’s a failure pattern you’ll see again and again in clinical AI, and it never shows up in an incident report.
+On the left, the pipeline is perfect: the feed is up, the model scores every hour, zero errors in thirty days.
 
-On the left is the pipeline dashboard. The feed is up. The model scores every patient every hour. The results are written back to the EHR as FHIR resources. Zero errors in thirty days. From an engineering point of view, it’s a success.
+On the right is the question nobody asked: who acted on the last score?
 
-On the right is the question nobody checked: who acted on the last score? Because if the score lands in a tab nobody opens, or in an inbox nobody reads, or arrives after the decision has already been made — the pipeline changed nothing. It’s just an expensive way to store numbers.
-
-This happens because projects start from data availability — “we can get the vitals, let’s build a model” — instead of from a decision — “the rapid response nurse needs to know earlier, at this point in her workflow.”
-
-[Optional: add your own example here — a model or dashboard you saw, or built, that worked technically but wasn’t used, and why.]
-
-So everything that follows starts from the decision, not from the data.</aside>
+If the score lands where nobody looks, or after the decision is made, the pipeline changed nothing. So we start from the decision, not from the data.</aside>
 </section>
