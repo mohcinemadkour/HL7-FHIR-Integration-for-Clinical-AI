@@ -1,0 +1,24 @@
+<section id="feed" data-transition="fade" style="background:#E9EEF0;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">STEP 4 · READ THE FEED</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Five discharge messages. Find what’s wrong.</h2>
+<div style="background:#0F1E2E;border-radius:16px;padding:36px 40px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B8C7D3">MSH|^~\&amp;|EPIC|LAKESIDE|READMIT_AI|LAKESIDE|202610010915-0500||ADT^A03^ADT_A03|<span style="color:#E08A3C">MSG0001</span>|P|2.5.1</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B8C7D3">PID|1||<span style="color:#E08A3C">100234^^^LAKESIDE^MR</span>||RIVERA^ANA||19560412|F</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B8C7D3">PV1|1|I|4W^412^1|||||||MED|||||||||V5001|||||||||||||||||<span style="color:#E08A3C">01</span>|||||||||<span style="color:#E08A3C">202610010900-0500</span></p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+<p style="font-size:24px"><b>MSH-10</b> control ID — unique?</p>
+<p style="font-size:24px"><b>PID-3</b> MRN — present?</p>
+<p style="font-size:24px"><b>PV1-36</b> disposition — standard code?</p>
+<p style="font-size:24px"><b>PV1-45</b> discharge time — present?</p>
+</div>
+<aside>Step four is where this exercise gets hands-on.
+
+In the resources you’ll find a file with five HL7 v2 discharge messages — ADT A03 — from Lakeside’s test system. The patients are fictional.
+
+On screen is the first message, and it’s a clean one. I’ve highlighted the four fields to check. MSH-10, the message control ID — it should be unique for every message. PID-3, the patient’s MRN. PV1-36, the discharge disposition — 01 means discharged home. And PV1-45, the discharge date and time.
+
+You don’t need to know HL7 v2 in depth yet; that’s Track B. To find a field, count the pipe characters. One tip: in the MSH segment, the first pipe is itself field one.
+
+Now open the file and check the other four messages. Every problem you find is a real decision for your IDD: what happens to that message, who gets alerted, and which assumption you now have to test. Find at least three.</aside>
+</section>

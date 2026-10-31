@@ -27,7 +27,7 @@ The full plan, with content and editable lengths, is in [`course-plan/FHIR_Cours
 
 | Project | Built in | What it does |
 | --- | --- | --- |
-| Build Decision Record + Interface Design Document | Track A | Decide whether to build, pick the pattern, and specify the integration |
+| Readmission integration scope (hands-on) | Track A | Build Decision Record, pattern map, Interface Design Document and HL7 feed review for one request |
 | HL7 → FHIR integration channel | Track B | Mirth ingests ADT and ORU feeds and posts FHIR Patient and Observation resources to HAPI FHIR |
 | Real-time sepsis risk pipeline | Track C | FHIR features → XGBoost model → CDS Hooks card, scores saved as FHIR RiskAssessment |
 | Clinical NLP pipeline | Track D | DocumentReference notes → scispaCy extraction → structured Observations |
@@ -43,6 +43,7 @@ track-a-foundations/
     lecture-2-choose-your-pattern/
     lecture-3-interface-design-document/
   resources/                     Learner downloads (templates, examples, scenario, cheat sheet)
+  hands-on/                      Track A exercise: brief, sample HL7 feed, reference solution, deck
 track-b-healthcare-data-fundamentals/
 track-c-production-integration/
 track-d-ai-integration-deployment/
@@ -64,13 +65,17 @@ Each lecture folder has:
 | 5 | [Interface Design Document — template](track-a-foundations/resources/05-interface-design-document-template.md) | M1 · L3 |
 | 6 | [Interface Design Document — sepsis example](track-a-foundations/resources/06-interface-design-document-sepsis-example.md) | M1 · L3 |
 
+How to use each one: [resources/README.md](track-a-foundations/resources/README.md).
+
+**Track A hands-on:** [Scope the readmission integration](track-a-foundations/hands-on/README.md) — four deliverables, about four hours, ending with a review of a synthetic HL7 v2 discharge feed.
+
 All hospitals, names and figures in the examples are fictional and illustrative.
 
 ## Status
 
 | Track | Status |
 | --- | --- |
-| A | Scripts, slides and resources ready. M0 recorded. |
+| A | Scripts, slides, resources and hands-on ready. M0 recorded. |
 | B, C, D | Planned — see each track's README |
 
 ## Instructor
