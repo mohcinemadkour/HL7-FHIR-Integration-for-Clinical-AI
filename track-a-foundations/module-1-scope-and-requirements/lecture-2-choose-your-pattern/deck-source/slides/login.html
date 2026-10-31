@@ -1,0 +1,39 @@
+<section id="login" data-transition="fade" style="background:#0F1E2E;color:#F5F3EE;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#E08A3C">“WE’RE BUILDING A FHIR INTEGRATION” — WHICH ONE?</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Does a person log in?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#1C3247;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">NO · SYSTEM TO SYSTEM</p>
+<h3 style="font-size:44px;font-weight:600;line-height:1.15">SMART Backend Services</h3>
+<ol style="font-size:28px;line-height:1.5;color:#D3DEE6;padding-left:36px">
+<li>Your service signs a JWT with its key</li>
+<li>Auth server returns an access token</li>
+<li>Service calls FHIR — no human involved</li>
+</ol>
+<p style="font-size:24px;color:#B8C7D3">Pipelines, feature jobs, Bulk $export</p>
+</div>
+<div style="background:#0E7C70;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#F5F3EE">YES · USER FACING</p>
+<h3 style="font-size:44px;font-weight:600;line-height:1.15">SMART App Launch</h3>
+<ol style="font-size:28px;line-height:1.5;color:#F5F3EE;padding-left:36px">
+<li>User opens the app from the EHR</li>
+<li>OAuth 2.0 login and consent</li>
+<li>App gets a token and patient context</li>
+</ol>
+<p style="font-size:24px;color:#E6F2F0">Clinician apps, patient apps</p>
+</div>
+</div>
+<aside>Now the distinction that confuses more teams than any other.
+
+Someone says “we’re building a FHIR integration.” That sentence is incomplete, because there are two very different ways to authorize access to FHIR — and you need to know which one before you design anything.
+
+The question is simple: does a person log in?
+
+If no — it’s system to system — you use SMART Backend Services. Your service signs a JSON Web Token with its private key, the authorization server returns an access token, and your service calls the FHIR API. No human is involved. That’s how your pipelines, your feature jobs and your bulk exports work. You’ll implement exactly this with JWT client assertion in Track C.
+
+If yes — a person logs in — you use SMART App Launch. A clinician opens your app from inside the EHR, or a patient opens it on their phone. They log in with OAuth 2.0, and your app receives a token plus the context: which user, and which patient. Then it calls FHIR on that user’s behalf, limited to what they’re allowed to see.
+
+Same FHIR API underneath. Completely different security model, registration process and testing.
+
+Answer this question early. Teams that find out halfway through a build lose weeks re-doing their auth.</aside>
+</section>

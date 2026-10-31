@@ -1,0 +1,30 @@
+<section id="done" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">DEFINE DONE FIRST</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">“It works” is only the bottom layer</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="display:grid;grid-template-columns:560px 1fr;gap:40px;align-items:center">
+<div style="background:#E08A3C;color:#0F1E2E;border-radius:16px;padding:28px 36px"><h3 style="font-size:32px;font-weight:700">3 · It changes the outcome</h3></div>
+<p style="font-size:28px;color:#4A5563">Sepsis: faster time to escalation</p>
+</div>
+<div style="display:grid;grid-template-columns:560px 1fr;gap:40px;align-items:center">
+<div style="background:#0E7C70;color:#F5F3EE;border-radius:16px;padding:28px 36px"><h3 style="font-size:32px;font-weight:700">2 · People use it</h3></div>
+<p style="font-size:28px;color:#4A5563">Cards seen, acted on, override rate</p>
+</div>
+<div style="display:grid;grid-template-columns:560px 1fr;gap:40px;align-items:center">
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:28px 36px"><h3 style="font-size:32px;font-weight:700">1 · It works</h3></div>
+<p style="font-size:28px;color:#4A5563">Messages delivered, data complete, latency, uptime</p>
+</div>
+</div>
+<p style="font-size:28px;color:#0F1E2E">Each layer stands on the one below. Write a metric for all three in the IDD.</p>
+<aside>Before we scope anything, let’s define what done means.
+
+At go-live, the technical team usually celebrates: messages are flowing, tests passed, it works. That’s layer one, and it matters — delivery, completeness, latency, uptime.
+
+But it’s only the bottom layer. Layer two: do people actually use it? For our sepsis alert: are cards being seen, are nurses acting on them, and what’s the override rate?
+
+Layer three: does it change the outcome it was built for? For sepsis, that’s time to escalation — the metric you defined in the Build Check.
+
+Each layer depends on the one below it. No reliable data, no trust. No trust, no adoption. No adoption, no outcome.
+
+So the first thing that goes into your IDD is at least one metric for each layer. If you can only measure layer one, you can only prove that it works — not that it was worth building.</aside>
+</section>

@@ -1,0 +1,40 @@
+<section id="q2" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">QUESTION 2 OF 5 · DATA</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Is the data there, on time, and trustworthy?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#E9EEF0;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600;color:#0E7C70">Check</h3>
+<ul style="font-size:28px;line-height:1.45;padding-left:32px">
+<li>Latency: does it arrive inside the decision window?</li>
+<li>Completeness: measure it on real records</li>
+<li>Coding: LOINC and SNOMED, or local codes?</li>
+<li>Source of truth: which system owns it?</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;color:#E08A3C">Stop if…</h3>
+<p style="font-size:28px;line-height:1.4">The data arrives after the decision is made.</p>
+</div>
+<div style="border-left:6px solid #0E7C70;padding:8px 0 8px 32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">SEPSIS PIPELINE · CAUTION</p>
+<p style="font-size:28px;line-height:1.4">Vitals are timely. Lactate turnaround varies — model must handle a missing value.</p>
+</div>
+</div>
+</div>
+<aside>Question two: is the data there, on time, and trustworthy?
+
+This is where ML engineers usually feel at home, but in a hospital the traps are different.
+
+Latency first. Your decision has a window. If the nurse decides at the vitals check, and the data you need arrives two hours later, the integration is useless — no matter how good the model is.
+
+Completeness. Don’t trust the data dictionary. Pull a real sample, de-identified, and measure how often the field is actually filled in. A field that exists in the schema and is empty for half the patients is a very different input.
+
+Coding. Are labs coded in LOINC, or in local codes that change from site to site? That decides how much mapping work — and mapping maintenance — you’re signing up for.
+
+And the source of truth. If the same value lives in three systems, pick one and write it down.
+
+The Stop signal: the data arrives after the decision is made. An interface can’t fix that, and neither can a better model. Garbage in, garbage out — and late in is just as bad.
+
+On the sepsis pipeline, I’d score this Caution. Vitals are charted on time. Lactate is the problem: turnaround varies, so at the moment of scoring it’s often missing. That’s not a Stop — it’s a requirement. The model has to handle a missing lactate, and you’ll do exactly that in Track C, when we build features from FHIR.</aside>
+</section>

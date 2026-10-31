@@ -1,0 +1,42 @@
+<section id="q4" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">QUESTION 4 OF 5 · OWNERSHIP</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Who owns it after go-live?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#E9EEF0;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600;color:#0E7C70">Name one owner for each</h3>
+<ul style="font-size:28px;line-height:1.45;padding-left:32px">
+<li>The feed and the channel</li>
+<li>The model and its monitoring</li>
+<li>The alert and the clinical workflow</li>
+<li>Each vendor’s piece, in the contract</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;color:#E08A3C">Stop if…</h3>
+<p style="font-size:28px;line-height:1.4">The owner is “the project team.” Projects end. Pipelines don’t.</p>
+</div>
+<div style="border-left:6px solid #0E7C70;padding:8px 0 8px 32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">SEPSIS PIPELINE · GO</p>
+<p style="font-size:28px;line-height:1.4">Interface team: channel. ML owner: model. Nurse manager: alert.</p>
+</div>
+</div>
+</div>
+<aside>Question four: who owns it after go-live?
+
+A clinical AI integration has at least three moving parts, and each one needs a named owner.
+
+The feed and the channel: usually the interface team. When an Epic upgrade changes a segment, they fix it.
+
+The model and its monitoring: that’s probably you, or your ML team. When performance drifts, you investigate and revalidate.
+
+The alert and the workflow: that needs a clinical owner — a nurse manager, a medical director. When nurses start ignoring the alert, someone on the clinical side has to care, and has the authority to change the workflow.
+
+And if there are vendors — the EHR, an integration engine, a third-party app — write down who is responsible for what, and get it into the contract before signing. When something breaks at a boundary between two vendors, you don’t want to discover then that each one thinks it’s the other’s job.
+
+The Stop signal: the owner is “the project team.” Projects end. Teams get reassigned. Pipelines keep running — until they quietly break and nobody notices.
+
+[Optional: add a quick story here about an integration or model that lost its owner after go-live, and what happened.]
+
+For sepsis: the interface team owns the Mirth channel, the ML owner owns the model, the ED or ICU nurse manager owns the alert. Three names. That’s a Go.</aside>
+</section>

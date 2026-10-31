@@ -1,0 +1,56 @@
+<section id="mapping" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">SECTION 3 · FIELD MAPPING</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">One lab result: HL7 v2 → FHIR</h2>
+<table style="width:1664px;border-collapse:collapse;font-size:26px;line-height:1.3">
+<tr style="background:#0F1E2E;color:#F5F3EE">
+<th style="text-align:left;padding:16px 24px;width:280px">HL7 v2 field</th>
+<th style="text-align:left;padding:16px 24px;width:560px">FHIR Observation</th>
+<th style="text-align:left;padding:16px 24px">Rule</th>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0">
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">PID-3</td>
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">subject</td>
+<td style="padding:16px 24px">Look up Patient by MRN</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0;background:#EEF1F2">
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">OBX-3</td>
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">code</td>
+<td style="padding:16px 24px">Local code → LOINC via mapping table</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0">
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">OBX-5</td>
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">valueQuantity.value</td>
+<td style="padding:16px 24px">Numeric; reject if empty</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0;background:#EEF1F2">
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">OBX-6</td>
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">valueQuantity.code</td>
+<td style="padding:16px 24px">Map to UCUM unit</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0">
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">OBX-11</td>
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">status</td>
+<td style="padding:16px 24px">P → preliminary, F → final, C → corrected</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0;background:#EEF1F2">
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">OBX-14</td>
+<td style="padding:16px 24px;font-family:'JetBrains Mono', 'Courier New', monospace">effectiveDateTime</td>
+<td style="padding:16px 24px">ISO 8601 with time zone</td>
+</tr>
+</table>
+<aside>Section three is the mapping. Here’s what it looks like for one lab result going from an HL7 v2 ORU message to a FHIR Observation.
+
+PID-3, the patient identifier, becomes the subject — we look up the FHIR Patient by MRN, which is the matching rule we just decided.
+
+OBX-3, the test code, becomes Observation dot code — mapped from the local code to LOINC with the mapping table.
+
+OBX-5, the value, becomes valueQuantity dot value. It must be numeric, and if it’s empty, we reject the message.
+
+OBX-6, the units, map to a UCUM code.
+
+OBX-11, the result status: preliminary, final, corrected. Pay attention to this one. When a lab corrects a result, your features must update — otherwise your model scores the wrong value.
+
+And OBX-14, the observation time, becomes effectiveDateTime, in ISO 8601 with a time zone. Get the time zone wrong and your time-window features are off by hours.
+
+The interface team usually owns this table. Your job is to review it with model features in mind. You’ll build this exact mapping in Mirth in Track B.</aside>
+</section>

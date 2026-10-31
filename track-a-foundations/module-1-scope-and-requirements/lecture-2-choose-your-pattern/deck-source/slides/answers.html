@@ -1,0 +1,42 @@
+<section id="answers" data-transition="fade" style="background:#0F1E2E;color:#F5F3EE;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#E08A3C">ANSWERS</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">How did you do?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#1C3247;border-radius:16px;padding:36px 40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">A · ICU TRANSFER</p>
+<h3 style="font-size:44px;font-weight:600">HL7 v2 feed</h3>
+<p style="font-size:28px;color:#B8C7D3">An event: ADT^A02 transfer</p>
+</div>
+<div style="background:#1C3247;border-radius:16px;padding:36px 40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">B · RISK TREND APP</p>
+<h3 style="font-size:44px;font-weight:600">SMART App Launch</h3>
+<p style="font-size:28px;color:#B8C7D3">A person logs in, patient in context</p>
+</div>
+<div style="background:#1C3247;border-radius:16px;padding:36px 40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">C · RETRAINING</p>
+<h3 style="font-size:44px;font-weight:600">Bulk $export</h3>
+<p style="font-size:28px;color:#B8C7D3">Whole population, backend services</p>
+</div>
+<div style="background:#1C3247;border-radius:16px;padding:36px 40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">D · DRUG INTERACTION</p>
+<h3 style="font-size:44px;font-weight:600">CDS Hooks</h3>
+<p style="font-size:28px;color:#B8C7D3">A workflow moment: order-sign</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B8C7D3">Next: Lecture 3 — Write the Interface Design Document</p>
+<aside>Let’s check your answers.
+
+Case A, the ICU transfer: an HL7 v2 feed. It’s an event, and you need to react the moment it happens. Specifically, it’s an ADT A02 — a patient transfer message.
+
+Case B, the risk-trend app: SMART App Launch. A nurse opens it from the chart, logs in, and the app gets the patient context from the EHR.
+
+Case C, retraining: Bulk export. Two years of encounters for the whole hospital is a population-level job, run with backend services. Please don’t try this with thousands of individual FHIR queries — you’ll hit rate limits, and the interface team will not be happy with you.
+
+Case D, the drug interaction warning: CDS Hooks, on the order-sign hook. It’s advice at a specific moment in the workflow, before the order is final.
+
+If you got all four, great. If you missed one, go back to the decision tree and see which question you skipped.
+
+Post your answers — and any case from your own work you’re unsure about — in the Q&A.
+
+In the next lecture, we take everything from this module — the Build Decision Record and the patterns you chose — and turn it into the Interface Design Document. See you there.</aside>
+</section>

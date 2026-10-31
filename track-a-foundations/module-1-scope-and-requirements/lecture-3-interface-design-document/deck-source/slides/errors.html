@@ -1,0 +1,42 @@
+<section id="errors" data-transition="fade" style="background:#0F1E2E;color:#F5F3EE;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#E08A3C">SECTION 5 · ERRORS &amp; MONITORING</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Design the unhappy path</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="background:#1C3247;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-size:32px;font-weight:600">Validation</h3>
+<p style="font-size:24px;color:#B8C7D3">OBX-5 is empty</p>
+<p style="font-size:24px">→ Reject to error queue</p>
+<p style="font-size:24px">→ Interface analyst reviews daily</p>
+</div>
+<div style="background:#1C3247;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-size:32px;font-weight:600">Business rule</h3>
+<p style="font-size:24px;color:#B8C7D3">MRN not found</p>
+<p style="font-size:24px">→ Hold, retry, then review</p>
+<p style="font-size:24px">→ Interface analyst</p>
+</div>
+<div style="background:#1C3247;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-size:32px;font-weight:600">System</h3>
+<p style="font-size:24px;color:#B8C7D3">FHIR server times out</p>
+<p style="font-size:24px">→ Retry with backoff</p>
+<p style="font-size:24px">→ Page on-call if it persists</p>
+</div>
+</div>
+<div style="background:#E08A3C;color:#0F1E2E;border-radius:16px;padding:28px 40px">
+<p style="font-size:28px;line-height:1.4"><b>The AI-specific failure:</b> the feed stops quietly and the model keeps scoring stale data. Alert on data freshness, not just errors.</p>
+</div>
+<aside>Section five: what happens when it fails. Because it will.
+
+Plan for three kinds of errors.
+
+Validation errors: the message itself is wrong — say OBX-5, the value, is empty. Reject it to an error queue, and an interface analyst reviews the queue every day.
+
+Business-rule errors: the message is valid, but it breaks a rule — the MRN doesn’t match any patient yet, maybe because the admission hasn’t arrived. Hold it, retry, and if it still fails, send it for review.
+
+System errors: the other side is down — the FHIR server times out. Retry with backoff, and page on-call if it keeps failing.
+
+For each type, the IDD answers three questions: what happens to the message, who gets alerted, and how it gets resolved. And log everything, successes and failures, for audit.
+
+Now the failure that’s specific to AI, in orange. The feed stops quietly. No errors — just no new messages. The model keeps running and keeps producing scores, on data that’s hours old. Nobody notices.
+
+So monitor freshness: alert when you haven’t received a message in longer than normal. That one alert has saved more pipelines than any error handler.</aside>
+</section>

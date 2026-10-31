@@ -1,0 +1,68 @@
+<section id="matrix" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">CHEAT SHEET</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Six patterns at a glance</h2>
+<table style="width:1664px;border-collapse:collapse;font-size:24px;line-height:1.3">
+<tr style="background:#0F1E2E;color:#F5F3EE">
+<th style="text-align:left;padding:16px 20px;width:260px">Pattern</th>
+<th style="text-align:left;padding:16px 20px;width:300px">Trigger</th>
+<th style="text-align:left;padding:16px 20px;width:300px">Scope</th>
+<th style="text-align:left;padding:16px 20px;width:390px">Clinical AI use</th>
+<th style="text-align:left;padding:16px 20px">Watch out</th>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0">
+<td style="padding:16px 20px;font-weight:600">HL7 v2 feed</td>
+<td style="padding:16px 20px">Event: admit, result</td>
+<td style="padding:16px 20px">Every event, streaming</td>
+<td style="padding:16px 20px">Real-time features</td>
+<td style="padding:16px 20px;color:#4A5563">Formats vary by site</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0;background:#EEF1F2">
+<td style="padding:16px 20px;font-weight:600">FHIR query</td>
+<td style="padding:16px 20px">Your request</td>
+<td style="padding:16px 20px">One or a few patients</td>
+<td style="padding:16px 20px">On-demand features</td>
+<td style="padding:16px 20px;color:#4A5563">Rate limits, paging</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0">
+<td style="padding:16px 20px;font-weight:600">Bulk $export</td>
+<td style="padding:16px 20px">Schedule</td>
+<td style="padding:16px 20px">Whole population</td>
+<td style="padding:16px 20px">Training, drift monitoring</td>
+<td style="padding:16px 20px;color:#4A5563">Asynchronous, not real-time</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0;background:#EEF1F2">
+<td style="padding:16px 20px;font-weight:600">SMART app</td>
+<td style="padding:16px 20px">A person opens it</td>
+<td style="padding:16px 20px">Patient in context</td>
+<td style="padding:16px 20px">Clinician and patient apps</td>
+<td style="padding:16px 20px;color:#4A5563">App registration, security review</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0">
+<td style="padding:16px 20px;font-weight:600">CDS Hooks</td>
+<td style="padding:16px 20px">Workflow moment</td>
+<td style="padding:16px 20px">Current patient</td>
+<td style="padding:16px 20px">Alerts and advice</td>
+<td style="padding:16px 20px;color:#4A5563">Latency budget, alert fatigue</td>
+</tr>
+<tr style="border-bottom:1px solid #D6DDE0;background:#EEF1F2">
+<td style="padding:16px 20px;font-weight:600">C-CDA document</td>
+<td style="padding:16px 20px">Transition of care</td>
+<td style="padding:16px 20px">One snapshot</td>
+<td style="padding:16px 20px">Notes and summaries as input</td>
+<td style="padding:16px 20px;color:#4A5563">Static, patient matching</td>
+</tr>
+</table>
+<aside>Here’s the whole lecture on one slide. Screenshot it — it’s also in the resources as a PDF.
+
+HL7 v2 feed: triggered by events like admissions and results, streaming for every patient. In clinical AI, that’s your source of real-time features. Watch out: the format varies from site to site, so every new hospital means new mapping work.
+
+FHIR query: triggered by your request, for one or a few patients. Great for pulling features on demand. Watch out for rate limits and paging on large result sets.
+
+Bulk export: runs on a schedule, for the whole population. That’s your training data and your drift monitoring. It runs asynchronously — you start the export and collect the files later — so it’s never real-time.
+
+SMART app: triggered when a person opens it, with a patient in context. That’s how you build clinician-facing or patient-facing apps. Expect app registration and a security review with each EHR.
+
+CDS Hooks: triggered at a moment in the workflow — opening a chart, signing an order. That’s where AI alerts and advice live. Watch out: you have a tight latency budget, and a badly tuned alert creates alert fatigue fast.
+
+And C-CDA documents: a snapshot sent at a transition of care, like a discharge. Useful as input for NLP. But it’s static — it doesn’t update — and matching it to the right patient takes care.</aside>
+</section>

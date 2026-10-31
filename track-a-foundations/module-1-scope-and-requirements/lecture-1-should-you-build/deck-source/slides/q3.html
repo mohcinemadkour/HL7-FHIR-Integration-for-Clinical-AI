@@ -1,0 +1,46 @@
+<section id="q3" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">QUESTION 3 OF 5 · LIGHTEST PATH</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">What is the simplest pattern that works?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:24px;align-items:end">
+<div style="background:#E9EEF0;border-radius:16px;padding:28px 24px;height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">STEP 1</p>
+<p style="font-size:28px;font-weight:600;line-height:1.2">Manual step or report</p>
+</div>
+<div style="background:#D6E2E6;border-radius:16px;padding:28px 24px;height:260px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">STEP 2</p>
+<p style="font-size:28px;font-weight:600;line-height:1.2">Nightly batch or Bulk $export</p>
+</div>
+<div style="background:#B8CDD4;border-radius:16px;padding:28px 24px;height:320px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0F1E2E">STEP 3</p>
+<p style="font-size:28px;font-weight:600;line-height:1.2">FHIR query on demand</p>
+</div>
+<div style="background:#2E4A63;color:#F5F3EE;border-radius:16px;padding:28px 24px;height:380px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">STEP 4</p>
+<p style="font-size:28px;font-weight:600;line-height:1.2">Real-time HL7 v2 feed</p>
+</div>
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:28px 24px;height:440px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">STEP 5</p>
+<p style="font-size:28px;font-weight:600;line-height:1.2">CDS Hook inside the EHR workflow</p>
+</div>
+</div>
+<p style="font-size:28px;color:#4A5563">Each step up buys speed — and adds run cost. Climb only as high as the decision window needs.</p>
+<aside>Question three: what is the simplest pattern that would work?
+
+Engineers love to jump to the top of this ladder. Real-time, event-driven, inside the EHR — it’s the most interesting thing to build. It’s also the most expensive thing to run.
+
+So look at the ladder from the bottom.
+
+Step one: a manual step or a report. For something that happens a few times a month, a well-designed report or a checklist can deliver most of the value for almost none of the cost.
+
+Step two: a nightly batch, or a FHIR Bulk Data export. If the decision happens tomorrow morning, real-time buys you nothing.
+
+Step three: a FHIR query on demand — your app asks for the data when a user opens it. No feed to maintain.
+
+Step four: a real-time HL7 v2 feed through Mirth. Now you have a channel to monitor, messages to replay, and an upgrade to survive every year.
+
+Step five: a CDS Hook inside the EHR workflow. The highest impact and the highest cost — app registration, security review, alert design, clinician sign-off.
+
+The rule: climb only as high as the decision window from question one requires. And before you climb, ask whether a non-integration fix — a workflow change, or training — solves the real problem.
+
+For sepsis, the window is hours, and the action happens inside the EHR. So steps four and five are justified. That’s a Go — and in lecture 2 we’ll go deeper on choosing between these patterns.</aside>
+</section>

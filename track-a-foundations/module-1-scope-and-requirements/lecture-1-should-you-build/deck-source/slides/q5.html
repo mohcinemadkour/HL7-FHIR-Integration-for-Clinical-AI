@@ -1,0 +1,42 @@
+<section id="q5" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">QUESTION 5 OF 5 · PROOF</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">How will we know it worked?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#E9EEF0;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600;color:#0E7C70">Check</h3>
+<ul style="font-size:28px;line-height:1.45;padding-left:32px">
+<li>One primary metric tied to the decision</li>
+<li>A baseline measured before go-live</li>
+<li>Guardrails: false alerts, overrides</li>
+<li>Kill criteria and a review date</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:32px;font-weight:600;color:#E08A3C">Stop if…</h3>
+<p style="font-size:28px;line-height:1.4">“We’ll figure out how to measure it after launch.”</p>
+</div>
+<div style="border-left:6px solid #0E7C70;padding:8px 0 8px 32px;display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">SEPSIS PIPELINE · GO</p>
+<p style="font-size:28px;line-height:1.4">Primary: time to escalation. Guardrail: alert override rate. Review at [__] days.</p>
+</div>
+</div>
+</div>
+<aside>Question five: how will we know it worked?
+
+This is the question I care about most, because evaluation is what I do every day at EvalTrust — and it’s the one teams skip most often.
+
+You need four things, written down before you build.
+
+One primary metric, tied directly to the decision from question one. Not model AUC — that tells you the model ranks patients well, not that anything changed for them. The metric is about the action: did the nurse escalate sooner?
+
+A baseline, measured before go-live. Without it, you can’t show improvement, and you can’t defend the project when the budget review comes.
+
+Guardrails: the things that tell you it’s doing harm. For alerts, that’s the false-alert rate and the override rate. If nurses override almost every alert, you’re creating alert fatigue, and you’re making things worse.
+
+And kill criteria with a review date: “if the primary metric hasn’t moved by this date, or overrides stay above this level, we turn it off.” Deciding that in advance is what makes it a real decision.
+
+The Stop signal: “we’ll figure out how to measure it after launch.” You won’t — and by then nobody will want to.
+
+For sepsis: the primary metric is time from first warning signs to escalation. The guardrail is the alert override rate. And we review at [__] days. That’s a Go.</aside>
+</section>

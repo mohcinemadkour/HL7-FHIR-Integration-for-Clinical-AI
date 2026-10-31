@@ -1,0 +1,43 @@
+<section id="pushpull" data-transition="fade" style="background:#E9EEF0;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">THE CORE DIFFERENCE</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">HL7 v2 pushes. FHIR waits to be asked.</h2>
+<svg viewBox="0 0 1664 380" width="1664" height="380" aria-label="Push versus pull. Left: the EHR sends an ADT A01 event to Mirth, which sends FHIR to your model: the hospital tells you when something happens. Right: your app sends GET Observation to the FHIR server and gets a Bundle back: you ask when you need it." xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F1E2E"/></marker></defs>
+<text x="0" y="30" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0E7C70">PUSH · HL7 v2</text>
+<rect x="0" y="100" width="180" height="110" rx="12" fill="#0F1E2E"/>
+<text x="90" y="165" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">EHR</text>
+<rect x="310" y="100" width="180" height="110" rx="12" fill="#0F1E2E"/>
+<text x="400" y="165" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">Mirth</text>
+<rect x="620" y="100" width="180" height="110" rx="12" fill="#0E7C70"/>
+<text x="710" y="165" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">Your model</text>
+<line x1="184" y1="155" x2="304" y2="155" stroke="#0F1E2E" stroke-width="3" marker-end="url(#ah)"/>
+<line x1="494" y1="155" x2="614" y2="155" stroke="#0F1E2E" stroke-width="3" marker-end="url(#ah)"/>
+<text x="245" y="138" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0F1E2E">ADT^A01</text>
+<text x="555" y="138" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0F1E2E">FHIR</text>
+<text x="0" y="290" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" fill="#4A5563">The hospital tells you</text>
+<text x="0" y="330" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" fill="#4A5563">when something happens.</text>
+<line x1="832" y1="0" x2="832" y2="360" stroke="#B8C7D3" stroke-width="2"/>
+<text x="880" y="30" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0E7C70">PULL · FHIR REST</text>
+<rect x="880" y="100" width="220" height="110" rx="12" fill="#0E7C70"/>
+<text x="990" y="165" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">Your app</text>
+<rect x="1444" y="100" width="220" height="110" rx="12" fill="#0F1E2E"/>
+<text x="1554" y="165" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">FHIR server</text>
+<line x1="1104" y1="130" x2="1438" y2="130" stroke="#0F1E2E" stroke-width="3" marker-end="url(#ah)"/>
+<line x1="1440" y1="185" x2="1108" y2="185" stroke="#0F1E2E" stroke-width="3" marker-end="url(#ah)"/>
+<text x="1272" y="115" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0F1E2E">GET /Observation</text>
+<text x="1272" y="225" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0F1E2E">Bundle (JSON)</text>
+<text x="880" y="290" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" fill="#4A5563">You ask when you need it.</text>
+<text x="880" y="330" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" fill="#4A5563">Nothing happens until you do.</text>
+</svg>
+<aside>If you remember one technical idea from this lecture, make it this one.
+
+On the left: HL7 v2 is push. Something happens in the hospital — a patient is admitted — and the EHR sends an ADT A01 message. It goes over MLLP to an interface engine like Mirth, which can transform it, for example into FHIR, and pass it to your model. You don’t ask. The hospital tells you, in real time, every time.
+
+That makes HL7 v2 the workhorse for event-driven workflows. It’s mature and very reliable. The downside: the message formats are rigid and vary from site to site, so every change — a new field, a new site — means mapping work.
+
+On the right: FHIR REST is pull. Your app sends a request — GET Observation for this patient — and the FHIR server sends back a Bundle in JSON. Nothing moves until you ask.
+
+That’s ideal for on-demand access and modern apps, but it means you don’t automatically know when something changed. FHIR does have a subscription mechanism for notifications, but support varies a lot between EHRs, so check what your site actually supports before you design around it.
+
+Push for events. Pull for questions. Most real pipelines need both.</aside>
+</section>

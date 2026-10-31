@@ -1,0 +1,31 @@
+<section id="shelfware" data-transition="fade" style="background:#E9EEF0;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">THE FAILURE NOBODY REPORTS</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Technically perfect. Clinically ignored.</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:24px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B8C7D3">PIPELINE STATUS</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px">ADT/ORU feed ........ OK</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px">Model scoring ....... OK</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px">FHIR write-back ..... OK</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px">Errors last 30d ..... 0</p>
+</div>
+<div style="background:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;justify-content:center;gap:24px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B4621B">THE QUESTION NOBODY CHECKED</p>
+<p style="font-size:44px;font-weight:600;line-height:1.2">Who acted on the last risk score?</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5563">A score in a tab nobody opens changes nothing.</p>
+</div>
+</div>
+<aside>Now the first question: what decision does it change?
+
+Here’s a failure pattern you’ll see again and again in clinical AI, and it never shows up in an incident report.
+
+On the left is the pipeline dashboard. The feed is up. The model scores every patient every hour. The results are written back to the EHR as FHIR resources. Zero errors in thirty days. From an engineering point of view, it’s a success.
+
+On the right is the question nobody checked: who acted on the last score? Because if the score lands in a tab nobody opens, or in an inbox nobody reads, or arrives after the decision has already been made — the pipeline changed nothing. It’s just an expensive way to store numbers.
+
+This happens because projects start from data availability — “we can get the vitals, let’s build a model” — instead of from a decision — “the rapid response nurse needs to know earlier, at this point in her workflow.”
+
+[Optional: add your own example here — a model or dashboard you saw, or built, that worked technically but wasn’t used, and why.]
+
+So everything that follows starts from the decision, not from the data.</aside>
+</section>

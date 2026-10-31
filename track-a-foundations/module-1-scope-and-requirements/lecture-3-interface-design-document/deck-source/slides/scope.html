@@ -1,0 +1,39 @@
+<section id="scope" data-transition="fade" style="background:#E9EEF0;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">SCOPE THE DATA</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Move the minimum. Write down what’s out.</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="background:#0E7C70;color:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">MUST · VERSION 1</p>
+<ul style="font-size:28px;line-height:1.5;padding-left:32px">
+<li>Vitals: HR, RR, temp, BP</li>
+<li>Labs: WBC, lactate, creatinine</li>
+<li>Admit and transfer events</li>
+</ul>
+</div>
+<div style="background:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">LATER · VERSION 2</p>
+<ul style="font-size:28px;line-height:1.5;padding-left:32px;color:#4A5563">
+<li>Antibiotic orders</li>
+<li>Problem list</li>
+<li>Note text for NLP</li>
+</ul>
+</div>
+<div style="background:#F5F3EE;border:2px dashed #B4621B;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B4621B">OUT OF SCOPE</p>
+<ul style="font-size:28px;line-height:1.5;padding-left:32px;color:#4A5563">
+<li>Imaging</li>
+<li>Billing codes</li>
+<li>Full chart history</li>
+</ul>
+</div>
+</div>
+<aside>Now scope. How much data should move?
+
+The most common failure here is scope creep. You start with a clear goal, then someone says “while we’re at it, let’s also pull the allergies, the imaging, the whole history.” Every extra field is more mapping, more testing, more to maintain, and more protected health information to secure.
+
+ML engineers are especially prone to this, because more features feel like a better model. Resist it. Start with the minimum the model and workflow need, and add later with evidence.
+
+Sort every field into three buckets. Must, for version one: for sepsis, the core vitals, three labs, and admit and transfer events. Later, for version two: antibiotic orders, the problem list, note text for NLP. And out of scope: imaging, billing codes, the full chart history.
+
+The out-of-scope list is the one people skip, and it’s the one that protects you. When someone asks in month three “why don’t we have imaging?”, you point to the signed IDD.</aside>
+</section>

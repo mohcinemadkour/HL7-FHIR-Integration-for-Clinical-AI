@@ -1,0 +1,35 @@
+<section id="iceberg" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">BUILD COST VS RUN COST</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">The build is the part you can see</h2>
+<div style="display:flex;flex-direction:column;gap:0px">
+<div style="background:#E9EEF0;border-radius:16px 16px 0 0;padding:28px 40px;display:flex;justify-content:space-between;align-items:center">
+<h3 style="font-size:32px;font-weight:600">Build · channel, mappings, model wrapper, testing</h3>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#4A5563">one time</p>
+</div>
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:0 0 16px 16px;padding:40px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h3 style="font-size:32px;font-weight:600">Run · every year, for the life of the integration</h3>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">recurring</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 64px">
+<p style="font-size:28px;color:#B8C7D3">EHR upgrades that change the feed</p>
+<p style="font-size:28px;color:#B8C7D3">Model drift and revalidation</p>
+<p style="font-size:28px;color:#B8C7D3">New fields someone suddenly needs</p>
+<p style="font-size:28px;color:#B8C7D3">Alert tuning and clinician feedback</p>
+<p style="font-size:28px;color:#B8C7D3">Failed messages and 2 a.m. pages</p>
+<p style="font-size:28px;color:#B8C7D3">Security reviews and audits</p>
+</div>
+</div>
+</div>
+<aside>Here’s the picture I want you to keep in your head for the rest of the course.
+
+The build is the part everyone sees: the Mirth channel, the mappings, the model wrapper, the testing. It gets a budget and a project plan.
+
+The run is underneath, and it never ends. Every EHR upgrade can change the feed. Someone will ask for one more field. Messages will fail, and someone gets paged at two in the morning. Security will review it every year.
+
+And here’s the part that’s specific to clinical AI: you don’t have one thing aging, you have two. The interface ages, and the model ages. Patient populations shift, lab assays change, documentation habits change — and your model drifts. That means monitoring, revalidation and sometimes retraining, for as long as it’s live.
+
+[Optional: give your own rule of thumb here — for example, how the yearly run cost compared to the build cost on a project you worked on. Use your real numbers.]
+
+So when someone asks “how much will it cost?”, the honest answer always has two parts: the build, and the run per year, times the years you expect to keep it alive.</aside>
+</section>

@@ -1,0 +1,43 @@
+<section id="map" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">THE SIX PATTERNS</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Where each pattern lives</h2>
+<svg viewBox="0 0 1664 620" width="1664" height="620" aria-label="Map of six integration patterns by freshness and number of patients. Real-time and one patient: CDS Hook. Real-time event stream: HL7 v2 feed. On demand, one patient: SMART app and FHIR query. Point-in-time snapshot: C-CDA document. Periodic, whole population: Bulk export." xmlns="http://www.w3.org/2000/svg">
+<line x1="200" y1="560" x2="1650" y2="560" stroke="#4A5563" stroke-width="2"/>
+<line x1="200" y1="20" x2="200" y2="560" stroke="#4A5563" stroke-width="2"/>
+<line x1="200" y1="290" x2="1650" y2="290" stroke="#D6DDE0" stroke-width="2" stroke-dasharray="8 8"/>
+<text x="185" y="80" text-anchor="end" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" fill="#4A5563">Real-time</text>
+<text x="185" y="300" text-anchor="end" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" fill="#4A5563">On demand</text>
+<text x="185" y="530" text-anchor="end" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" fill="#4A5563">Periodic</text>
+<text x="210" y="604" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" fill="#4A5563">One patient</text>
+<text x="1650" y="604" text-anchor="end" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" fill="#4A5563">Whole population</text>
+<rect x="240" y="40" width="300" height="64" rx="32" fill="#E08A3C"/>
+<text x="390" y="82" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F1E2E">CDS Hook</text>
+<rect x="900" y="80" width="300" height="64" rx="32" fill="#0F1E2E"/>
+<text x="1050" y="122" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">HL7 v2 feed</text>
+<rect x="240" y="200" width="300" height="64" rx="32" fill="#0E7C70"/>
+<text x="390" y="242" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">SMART app</text>
+<rect x="600" y="310" width="300" height="64" rx="32" fill="#0F1E2E"/>
+<text x="750" y="352" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">FHIR query</text>
+<rect x="300" y="440" width="300" height="64" rx="32" fill="#0F1E2E"/>
+<text x="450" y="482" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">C-CDA document</text>
+<rect x="1300" y="460" width="300" height="64" rx="32" fill="#0F1E2E"/>
+<text x="1450" y="502" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">Bulk $export</text>
+</svg>
+<aside>Here are the six patterns you’ll meet, placed on one map.
+
+The vertical axis is freshness: real-time at the top, on demand in the middle, periodic at the bottom. The horizontal axis is scope: one patient on the left, the whole population on the right.
+
+Top left, in orange: CDS Hooks. Real-time, one patient, right inside the clinician’s workflow. For clinical AI, this is where your prediction meets a human decision.
+
+Top, toward the middle: the HL7 v2 feed. Real-time events — admissions, transfers, lab results — streaming for every patient in the hospital as they happen.
+
+On the left, in teal: the SMART on FHIR app. A person opens it, for one patient, when they need it.
+
+In the middle: the plain FHIR query. Your system asks for one patient’s data on demand.
+
+Lower left: the C-CDA document — a snapshot of one patient at one moment, usually sent between organizations.
+
+And bottom right: FHIR Bulk Data export. Thousands of patients, on a schedule. That’s your training and monitoring data.
+
+Keep this map in mind. Every pattern we discuss today has a place on it.</aside>
+</section>

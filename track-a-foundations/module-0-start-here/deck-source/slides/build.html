@@ -1,0 +1,30 @@
+<section id="build" data-transition="fade" style="background:#E9EEF0;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">WHAT YOU’LL BUILD</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Three working pipelines</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="background:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:44px;font-weight:600;color:#0E7C70">01</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">HL7 → FHIR integration channel</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5563">Mirth ingests ADT and ORU feeds and posts FHIR Patient and Observation resources to HAPI FHIR</p>
+</div>
+<div style="background:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:44px;font-weight:600;color:#0E7C70">02</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">Real-time sepsis risk pipeline</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5563">FHIR features into an XGBoost model, CDS Hooks alert cards, results saved as RiskAssessment</p>
+</div>
+<div style="background:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:44px;font-weight:600;color:#0E7C70">03</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.2">Clinical NLP pipeline</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5563">Notes from DocumentReference, scispaCy extraction, structured Observations written back</p>
+</div>
+</div>
+<aside>By the end of the course, you’ll have built three pipelines.
+
+Number one: an HL7-to-FHIR integration channel. A Mirth Connect channel that takes live HL7 v2 ADT and ORU messages, parses the clinical observations, and posts them as FHIR R4 Patient and Observation resources to a local HAPI FHIR server.
+
+Number two: a real-time sepsis risk pipeline. You’ll extract features from FHIR, run them through an XGBoost model, surface the result as a CDS Hooks alert card in the clinician’s workflow, and store the score as a FHIR RiskAssessment.
+
+Number three: a clinical NLP pipeline. You’ll pull notes through FHIR DocumentReference, extract medications and diagnoses with scispaCy, and write structured Observations back.
+
+These are portfolio pieces. Put them on GitHub, show them in interviews, or use them as the starting point for real work.</aside>
+</section>

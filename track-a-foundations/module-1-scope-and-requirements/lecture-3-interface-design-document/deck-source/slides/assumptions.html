@@ -1,0 +1,35 @@
+<section id="assumptions" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">SECTION 6 · CONSTRAINTS &amp; ASSUMPTIONS</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Constraints you accept. Assumptions you test.</h2>
+<div style="display:grid;grid-template-columns:1fr 1.4fr;gap:32px">
+<div style="background:#E9EEF0;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600">Constraints · fixed</h3>
+<ul style="font-size:28px;line-height:1.5;padding-left:32px;color:#4A5563">
+<li>HIPAA, TLS everywhere</li>
+<li>EHR supports CDS Hooks only on patient-view</li>
+<li>No budget for a new interface engine</li>
+</ul>
+</div>
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600;color:#E08A3C">Assumptions · owner + test</h3>
+<table style="border-collapse:collapse;font-size:26px;line-height:1.35">
+<tr><td style="padding:10px 0;border-bottom:1px solid #3A4B5C">Vitals reach Mirth within [__] minutes</td><td style="padding:10px 0 10px 24px;border-bottom:1px solid #3A4B5C;color:#B8C7D3">Measure 30 days of feed</td></tr>
+<tr><td style="padding:10px 0;border-bottom:1px solid #3A4B5C">Lactate is present at scoring time</td><td style="padding:10px 0 10px 24px;border-bottom:1px solid #3A4B5C;color:#B8C7D3">Check a de-identified sample</td></tr>
+<tr><td style="padding:10px 0">Nurses see the card at the vitals check</td><td style="padding:10px 0 10px 24px;color:#B8C7D3">Shadow one shift</td></tr>
+</table>
+</div>
+</div>
+<aside>Section six separates two things teams often mix up.
+
+Constraints are fixed. You accept them and design around them. HIPAA and encryption everywhere. Maybe the EHR only supports CDS Hooks on patient-view. Maybe there’s no budget for a new interface engine.
+
+Assumptions are different. They’re things you believe are true but haven’t verified. And they look exactly like facts — until go-live.
+
+For sepsis: we assume vitals reach Mirth within a few minutes. We assume lactate is usually present when we score. We assume nurses will see the card at the vitals check.
+
+Any of these can be wrong, and if it is, the project fails even though every line of code is correct.
+
+So every assumption in the IDD gets two things: an owner and a test. Measure thirty days of feed timestamps. Check a de-identified sample for lactate. Shadow one shift and watch how the nurses actually work.
+
+Test the riskiest assumptions first — ideally before you build, not after.</aside>
+</section>

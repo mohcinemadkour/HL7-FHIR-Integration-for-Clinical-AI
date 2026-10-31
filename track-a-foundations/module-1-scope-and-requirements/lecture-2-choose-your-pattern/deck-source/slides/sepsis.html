@@ -1,0 +1,44 @@
+<section id="sepsis" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">WORKED EXAMPLE · OUR SEPSIS PIPELINE</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">One product, four patterns</h2>
+<svg viewBox="0 0 1664 500" width="1664" height="500" aria-label="Sepsis pipeline architecture. Top row: EHR sends HL7 v2 to Mirth, Mirth sends FHIR to the FHIR server, the model service queries the FHIR server, and the model sends a CDS Hook card to the clinician. Bottom lane: the EHR provides a nightly Bulk export for training and drift monitoring, which updates the model." xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="sa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F1E2E"/></marker></defs>
+<rect x="0" y="40" width="220" height="110" rx="12" fill="#0F1E2E"/>
+<text x="110" y="105" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">EHR</text>
+<rect x="361" y="40" width="220" height="110" rx="12" fill="#0F1E2E"/>
+<text x="471" y="105" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">Mirth</text>
+<rect x="722" y="40" width="220" height="110" rx="12" fill="#0F1E2E"/>
+<text x="832" y="105" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">FHIR server</text>
+<rect x="1083" y="40" width="220" height="110" rx="12" fill="#0E7C70"/>
+<text x="1193" y="105" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5F3EE">Sepsis model</text>
+<rect x="1444" y="40" width="220" height="110" rx="12" fill="#E08A3C"/>
+<text x="1554" y="105" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F1E2E">Clinician</text>
+<line x1="224" y1="110" x2="355" y2="110" stroke="#0F1E2E" stroke-width="3" marker-end="url(#sa)"/>
+<line x1="585" y1="110" x2="716" y2="110" stroke="#0F1E2E" stroke-width="3" marker-end="url(#sa)"/>
+<line x1="946" y1="110" x2="1077" y2="110" stroke="#0F1E2E" stroke-width="3" marker-end="url(#sa)"/>
+<line x1="1307" y1="110" x2="1438" y2="110" stroke="#0F1E2E" stroke-width="3" marker-end="url(#sa)"/>
+<text x="290" y="92" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0E7C70">HL7 v2</text>
+<text x="651" y="92" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0E7C70">FHIR</text>
+<text x="1012" y="92" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#0E7C70">query</text>
+<text x="1373" y="92" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#B4621B">CDS Hook</text>
+<text x="140" y="200" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#4A5563">REAL-TIME PATH · EVERY EVENT</text>
+<line x1="110" y1="154" x2="110" y2="314" stroke="#0F1E2E" stroke-width="3" marker-end="url(#sa)"/>
+<rect x="0" y="320" width="560" height="100" rx="12" fill="#E9EEF0" stroke="#B8C7D3" stroke-width="2"/>
+<text x="280" y="380" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F1E2E">Bulk $export · nightly</text>
+<line x1="564" y1="370" x2="716" y2="370" stroke="#0F1E2E" stroke-width="3" marker-end="url(#sa)"/>
+<rect x="722" y="320" width="581" height="100" rx="12" fill="#E9EEF0" stroke="#B8C7D3" stroke-width="2"/>
+<text x="1012" y="380" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" font-weight="600" fill="#0F1E2E">Training &amp; drift monitoring</text>
+<line x1="1193" y1="316" x2="1193" y2="156" stroke="#0F1E2E" stroke-width="3" marker-end="url(#sa)"/>
+<text x="1212" y="250" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#4A5563">model updates</text>
+<text x="0" y="480" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#4A5563">BATCH PATH · EVERY NIGHT</text>
+</svg>
+<aside>Let’s put it all together with the pipeline you’ll build in this course: the real-time sepsis risk pipeline.
+
+Look at the top row — the real-time path. The EHR pushes HL7 v2 messages, admissions and lab results, to Mirth. That’s pattern one, push. Mirth transforms them into FHIR resources and writes them to our FHIR server. The sepsis model queries that FHIR server for the features it needs — that’s the FHIR query pattern, using backend services, because no human logs in. And the result reaches the clinician as a CDS Hooks card in the EHR.
+
+Now the bottom row — the batch path. Every night, we run a Bulk export to pull the population-level data we need for training and for drift monitoring. When we see drift, we revalidate and update the model.
+
+So that’s four patterns in one product: HL7 v2, FHIR query, CDS Hooks, and Bulk export. Each one was picked by the three questions: what triggers it, who’s in the loop, and how many patients.
+
+This is the normal case. When someone asks you “is it HL7 or FHIR?”, the honest answer is usually “both — for different flows.” Your job is to pick the right pattern for each flow, and document it in the Interface Design Document, which is our next lecture.</aside>
+</section>

@@ -1,0 +1,47 @@
+<section id="hooks" data-transition="fade" style="background:#F5F3EE;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">CDS HOOKS</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">How a prediction reaches the clinician</h2>
+<div style="display:grid;grid-template-columns:1fr 48px 1fr 48px 1fr 48px 1fr;gap:12px;align-items:center">
+<div style="background:#E9EEF0;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">1</p>
+<h3 style="font-size:28px;font-weight:600;line-height:1.25">Clinician opens the chart</h3>
+</div>
+<p style="font-size:44px;color:#0E7C70;text-align:center">→</p>
+<div style="background:#E9EEF0;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">2</p>
+<h3 style="font-size:28px;font-weight:600;line-height:1.25">EHR calls your service with prefetched FHIR data</h3>
+</div>
+<p style="font-size:44px;color:#0E7C70;text-align:center">→</p>
+<div style="background:#E9EEF0;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#0E7C70">3</p>
+<h3 style="font-size:28px;font-weight:600;line-height:1.25">Your model scores the patient</h3>
+</div>
+<p style="font-size:44px;color:#0E7C70;text-align:center">→</p>
+<div style="background:#0E7C70;color:#F5F3EE;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">4</p>
+<h3 style="font-size:28px;font-weight:600;line-height:1.25">A card appears in the EHR</h3>
+</div>
+</div>
+<div style="background:#0F1E2E;color:#F5F3EE;border-radius:16px;padding:32px 40px;display:flex;justify-content:space-between;align-items:center;gap:40px;border-left:12px solid #E08A3C">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E08A3C">EXAMPLE CARD · MOCKUP</p>
+<p style="font-size:32px;font-weight:600">Sepsis risk elevated — review recent vitals and labs</p>
+<p style="font-size:24px;color:#B8C7D3">Source: Sepsis Risk Model · Explain this score</p>
+</div>
+<div style="display:flex;gap:16px">
+<p style="font-size:24px;background:#0E7C70;padding:12px 24px;border-radius:8px">Open order set</p>
+<p style="font-size:24px;border:2px solid #B8C7D3;padding:10px 24px;border-radius:8px">Dismiss + reason</p>
+</div>
+</div>
+<aside>For clinical AI, CDS Hooks is the pattern that matters most, because it’s where your model meets a human decision. So let’s walk through how it works.
+
+Step one: a clinician does something in the EHR — opens a patient’s chart, or starts signing an order. Those moments are called hooks; patient-view and order-sign are two common ones.
+
+Step two: the EHR calls your CDS service over HTTPS. It can send prefetched FHIR data with the call — recent vitals, labs — so your service doesn’t have to query for them.
+
+Step three: your model scores the patient. And this has to be fast. The clinician is waiting, so your latency budget is tight.
+
+Step four: your service returns a card, and the EHR displays it. Below is a mockup of what that can look like: a short message, where the score came from, a link to explain it, and actions — open an order set, or dismiss with a reason.
+
+That “dismiss with a reason” button is your evaluation data. Every override tells you something about your model or your alert design. Remember question five from the Build Check: the override rate is your guardrail metric. You’ll build this full flow in Track C.</aside>
+</section>

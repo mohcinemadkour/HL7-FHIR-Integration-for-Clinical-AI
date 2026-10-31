@@ -1,0 +1,49 @@
+<section id="spec" data-transition="fade" style="background:#E9EEF0;color:#0F1E2E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#0E7C70">SECTION 2 · PATTERN, STANDARD &amp; SECURITY</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">“We support FHIR” is not a spec</h2>
+<table style="width:1664px;border-collapse:collapse;font-size:28px;line-height:1.3">
+<tr style="background:#0F1E2E;color:#F5F3EE">
+<th style="text-align:left;padding:18px 24px;width:280px"></th>
+<th style="text-align:left;padding:18px 24px;width:480px">Vague</th>
+<th style="text-align:left;padding:18px 24px">Specific</th>
+</tr>
+<tr style="border-bottom:1px solid #C8D3D8;background:#F5F3EE">
+<td style="padding:18px 24px;font-weight:600">Standard</td>
+<td style="padding:18px 24px;color:#4A5563">FHIR</td>
+<td style="padding:18px 24px">FHIR R4, US Core profiles, version [__]</td>
+</tr>
+<tr style="border-bottom:1px solid #C8D3D8">
+<td style="padding:18px 24px;font-weight:600">Inbound</td>
+<td style="padding:18px 24px;color:#4A5563">HL7 feed</td>
+<td style="padding:18px 24px">HL7 v2.5.1 ADT^A01/A02/A03, ORU^R01 over MLLP</td>
+</tr>
+<tr style="border-bottom:1px solid #C8D3D8;background:#F5F3EE">
+<td style="padding:18px 24px;font-weight:600">Auth</td>
+<td style="padding:18px 24px;color:#4A5563">Secure</td>
+<td style="padding:18px 24px">SMART Backend Services, JWT, scope system/Observation.read</td>
+</tr>
+<tr style="border-bottom:1px solid #C8D3D8">
+<td style="padding:18px 24px;font-weight:600">Transport</td>
+<td style="padding:18px 24px;color:#4A5563">Encrypted</td>
+<td style="padding:18px 24px">TLS 1.2+, VPN for MLLP, IP allow-list</td>
+</tr>
+<tr style="border-bottom:1px solid #C8D3D8;background:#F5F3EE">
+<td style="padding:18px 24px;font-weight:600">Output</td>
+<td style="padding:18px 24px;color:#4A5563">Alert in Epic</td>
+<td style="padding:18px 24px">CDS Hooks 2.0, patient-view, card with one action</td>
+</tr>
+</table>
+<aside>Section two is where vague words cause the most rework.
+
+“We support FHIR” tells an engineer almost nothing. Which version? Which profiles? So you write: FHIR R4, US Core profiles, and the exact version the site runs.
+
+“We’ll get an HL7 feed” — which version, which message types, which transport? HL7 v2.5.1, ADT A01, A02, A03 and ORU R01, over MLLP.
+
+“It’s secure” — how? SMART Backend Services with a signed JWT, and the exact scopes, like system slash Observation dot read. Ask for the narrowest scopes that work.
+
+“Encrypted” becomes TLS 1.2 or higher, a VPN for the MLLP connection, and an IP allow-list.
+
+And “an alert in Epic” becomes CDS Hooks version 2.0, on the patient-view hook, returning a card with one action.
+
+Cloud engineers: this is the section you’ll care most about, because it decides your network design, your secrets management and your security review. Fill it in with the interface team, and check every value against what the site actually supports.</aside>
+</section>
