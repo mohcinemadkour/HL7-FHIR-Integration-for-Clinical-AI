@@ -29,15 +29,12 @@
 <text x="880" y="290" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" fill="#4A5563">You ask when you need it.</text>
 <text x="880" y="330" font-family="IBM Plex Sans, Arial, sans-serif" font-size="28" fill="#4A5563">Nothing happens until you do.</text>
 </svg>
-<aside>If you remember one technical idea from this lecture, make it this one.
-
-On the left: HL7 v2 is push. Something happens in the hospital — a patient is admitted — and the EHR sends an ADT A01 message. It goes over MLLP to an interface engine like Mirth, which can transform it, for example into FHIR, and pass it to your model. You don’t ask. The hospital tells you, in real time, every time.
-
-That makes HL7 v2 the workhorse for event-driven workflows. It’s mature and very reliable. The downside: the message formats are rigid and vary from site to site, so every change — a new field, a new site — means mapping work.
-
-On the right: FHIR REST is pull. Your app sends a request — GET Observation for this patient — and the FHIR server sends back a Bundle in JSON. Nothing moves until you ask.
-
-That’s ideal for on-demand access and modern apps, but it means you don’t automatically know when something changed. FHIR does have a subscription mechanism for notifications, but support varies a lot between EHRs, so check what your site actually supports before you design around it.
-
-Push for events. Pull for questions. Most real pipelines need both.</aside>
+<aside>• The one technical idea to remember: push vs. pull.
+• HL7 v2 is push. Something happens — the EHR sends a message.
+• It goes over MLLP to Mirth, gets transformed, reaches your model.
+• Reliable and mature. But formats are rigid and vary by site.
+• FHIR REST is pull. You ask, the server answers with a Bundle.
+• Great for on-demand access. But you don't know when something changed.
+• FHIR Subscriptions exist, but support varies. Check your site first.
+• Push for events. Pull for questions. Most pipelines need both.</aside>
 </section>

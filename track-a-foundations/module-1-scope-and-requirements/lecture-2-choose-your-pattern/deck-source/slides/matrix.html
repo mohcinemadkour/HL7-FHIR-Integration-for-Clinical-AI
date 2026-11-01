@@ -52,17 +52,11 @@
 <td style="padding:16px 20px;color:#4A5563">Static, patient matching</td>
 </tr>
 </table>
-<aside>Here’s the whole lecture on one slide. Screenshot it — it’s also in the resources as a PDF.
-
-HL7 v2 feed: triggered by events like admissions and results, streaming for every patient. In clinical AI, that’s your source of real-time features. Watch out: the format varies from site to site, so every new hospital means new mapping work.
-
-FHIR query: triggered by your request, for one or a few patients. Great for pulling features on demand. Watch out for rate limits and paging on large result sets.
-
-Bulk export: runs on a schedule, for the whole population. That’s your training data and your drift monitoring. It runs asynchronously — you start the export and collect the files later — so it’s never real-time.
-
-SMART app: triggered when a person opens it, with a patient in context. That’s how you build clinician-facing or patient-facing apps. Expect app registration and a security review with each EHR.
-
-CDS Hooks: triggered at a moment in the workflow — opening a chart, signing an order. That’s where AI alerts and advice live. Watch out: you have a tight latency budget, and a badly tuned alert creates alert fatigue fast.
-
-And C-CDA documents: a snapshot sent at a transition of care, like a discharge. Useful as input for NLP. But it’s static — it doesn’t update — and matching it to the right patient takes care.</aside>
+<aside>• The whole lecture on one slide. It's in the resources too.
+• HL7 v2 feed: events, every patient. Real-time features. Watch: site-specific formats.
+• FHIR query: your request, one patient. On-demand features. Watch: rate limits.
+• Bulk export: scheduled, whole population. Training and drift. Never real-time.
+• SMART app: a person opens it. Clinician and patient apps. Watch: app review.
+• CDS Hooks: a workflow moment. Alerts and advice. Watch: latency, alert fatigue.
+• C-CDA: transition of care. NLP input. Watch: static, patient matching.</aside>
 </section>

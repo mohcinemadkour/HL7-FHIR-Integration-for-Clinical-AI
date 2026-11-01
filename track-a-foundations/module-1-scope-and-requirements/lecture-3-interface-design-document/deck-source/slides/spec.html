@@ -33,17 +33,12 @@
 <td style="padding:18px 24px">CDS Hooks 2.0, patient-view, card with one action</td>
 </tr>
 </table>
-<aside>Section two is where vague words cause the most rework.
-
-“We support FHIR” tells an engineer almost nothing. Which version? Which profiles? So you write: FHIR R4, US Core profiles, and the exact version the site runs.
-
-“We’ll get an HL7 feed” — which version, which message types, which transport? HL7 v2.5.1, ADT A01, A02, A03 and ORU R01, over MLLP.
-
-“It’s secure” — how? SMART Backend Services with a signed JWT, and the exact scopes, like system slash Observation dot read. Ask for the narrowest scopes that work.
-
-“Encrypted” becomes TLS 1.2 or higher, a VPN for the MLLP connection, and an IP allow-list.
-
-And “an alert in Epic” becomes CDS Hooks version 2.0, on the patient-view hook, returning a card with one action.
-
-Cloud engineers: this is the section you’ll care most about, because it decides your network design, your secrets management and your security review. Fill it in with the interface team, and check every value against what the site actually supports.</aside>
+<aside>• Section 2 is where vague words cause rework.
+• “FHIR” → FHIR R4, US Core, and the exact version.
+• “HL7 feed” → v2.5.1, ADT A01/A02/A03 and ORU R01, over MLLP.
+• “Secure” → SMART Backend Services, signed JWT, narrowest scopes.
+• “Encrypted” → TLS 1.2+, VPN for MLLP, IP allow-list.
+• “Alert in Epic” → CDS Hooks 2.0, patient-view, one card.
+• Cloud engineers: this decides your network, secrets and security review.
+• Check every value against what the site supports.</aside>
 </section>

@@ -33,15 +33,12 @@
 <p style="font-size:24px;border:2px solid #B8C7D3;padding:10px 24px;border-radius:8px">Dismiss + reason</p>
 </div>
 </div>
-<aside>For clinical AI, CDS Hooks is the pattern that matters most, because it’s where your model meets a human decision. So let’s walk through how it works.
-
-Step one: a clinician does something in the EHR — opens a patient’s chart, or starts signing an order. Those moments are called hooks; patient-view and order-sign are two common ones.
-
-Step two: the EHR calls your CDS service over HTTPS. It can send prefetched FHIR data with the call — recent vitals, labs — so your service doesn’t have to query for them.
-
-Step three: your model scores the patient. And this has to be fast. The clinician is waiting, so your latency budget is tight.
-
-Step four: your service returns a card, and the EHR displays it. Below is a mockup of what that can look like: a short message, where the score came from, a link to explain it, and actions — open an order set, or dismiss with a reason.
-
-That “dismiss with a reason” button is your evaluation data. Every override tells you something about your model or your alert design. Remember question five from the Build Check: the override rate is your guardrail metric. You’ll build this full flow in Track C.</aside>
+<aside>• CDS Hooks is where your model meets a human decision.
+• 1 · The clinician opens a chart or signs an order. That's the hook.
+• 2 · The EHR calls your service, with prefetched FHIR data.
+• 3 · Your model scores the patient — fast. The clinician is waiting.
+• 4 · Your service returns a card. The EHR shows it.
+• The mockup: a message, the source, an explanation, actions.
+• “Dismiss with a reason” is your evaluation data.
+• Override rate is your guardrail metric. You'll build this in Track C.</aside>
 </section>

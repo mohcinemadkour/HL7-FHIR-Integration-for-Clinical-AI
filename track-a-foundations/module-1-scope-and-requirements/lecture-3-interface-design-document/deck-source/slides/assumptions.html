@@ -19,17 +19,11 @@
 </table>
 </div>
 </div>
-<aside>Section six separates two things teams often mix up.
-
-Constraints are fixed. You accept them and design around them. HIPAA and encryption everywhere. Maybe the EHR only supports CDS Hooks on patient-view. Maybe there’s no budget for a new interface engine.
-
-Assumptions are different. They’re things you believe are true but haven’t verified. And they look exactly like facts — until go-live.
-
-For sepsis: we assume vitals reach Mirth within a few minutes. We assume lactate is usually present when we score. We assume nurses will see the card at the vitals check.
-
-Any of these can be wrong, and if it is, the project fails even though every line of code is correct.
-
-So every assumption in the IDD gets two things: an owner and a test. Measure thirty days of feed timestamps. Check a de-identified sample for lactate. Shadow one shift and watch how the nurses actually work.
-
-Test the riskiest assumptions first — ideally before you build, not after.</aside>
+<aside>• Section 6: constraints vs. assumptions.
+• Constraints are fixed. HIPAA, TLS, what the EHR supports, budget.
+• Assumptions look like facts until go-live.
+• Sepsis: vitals arrive within minutes. Lactate is usually there. Nurses see the card.
+• Any one wrong, and the project fails with perfect code.
+• Give every assumption an owner and a test.
+• Test the riskiest first — before you build.</aside>
 </section>

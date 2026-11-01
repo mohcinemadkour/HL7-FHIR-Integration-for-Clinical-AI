@@ -22,21 +22,12 @@
 </div>
 </div>
 </div>
-<aside>Question five: how will we know it worked?
-
-This is the question I care about most, because evaluation is what I do every day at EvalTrust — and it’s the one teams skip most often.
-
-You need four things, written down before you build.
-
-One primary metric, tied directly to the decision from question one. Not model AUC — that tells you the model ranks patients well, not that anything changed for them. The metric is about the action: did the nurse escalate sooner?
-
-A baseline, measured before go-live. Without it, you can’t show improvement, and you can’t defend the project when the budget review comes.
-
-Guardrails: the things that tell you it’s doing harm. For alerts, that’s the false-alert rate and the override rate. If nurses override almost every alert, you’re creating alert fatigue, and you’re making things worse.
-
-And kill criteria with a review date: “if the primary metric hasn’t moved by this date, or overrides stay above this level, we turn it off.” Deciding that in advance is what makes it a real decision.
-
-The Stop signal: “we’ll figure out how to measure it after launch.” You won’t — and by then nobody will want to.
-
-For sepsis: the primary metric is time from first warning signs to escalation. The guardrail is the alert override rate. And we review at [__] days. That’s a Go.</aside>
+<aside>• Question five: how will we know it worked?
+• I care most about this one — it's what I do at EvalTrust.
+• One primary metric tied to the decision. Not AUC — the action.
+• A baseline measured before go-live.
+• Guardrails: false-alert rate and override rate.
+• Kill criteria and a review date, decided in advance.
+• Stop signal: “we'll figure out how to measure it after launch.”
+• Sepsis: time to escalation, override rate, review at [__] days. Go.</aside>
 </section>

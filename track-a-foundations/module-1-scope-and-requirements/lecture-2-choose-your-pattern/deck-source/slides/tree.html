@@ -39,21 +39,13 @@
 <p style="font-size:28px;font-weight:600;background:#0F1E2E;color:#F5F3EE;padding:18px 28px;border-radius:12px">FHIR query</p>
 </div>
 </div>
-<aside>Here’s how to turn all of this into a decision in under a minute. Ask these questions in this order, and stop at the first yes.
-
-One: is this an alert or a piece of advice at a specific moment in the clinician’s workflow? Then it’s CDS Hooks.
-
-Two: does a person open an app and log in? Then it’s a SMART App Launch.
-
-Three: do you need thousands of patients at once — for training, research, or monitoring? Then it’s Bulk export.
-
-Four: is it a fixed snapshot sent to another organization — a referral, a discharge summary? Then it’s a C-CDA document.
-
-Five: do you need to react the moment something happens — an admission, a lab result? Then it’s an HL7 v2 feed. If your EHR supports FHIR subscriptions well, that can be an alternative, but at most sites today, events still flow as HL7 v2.
-
-And if none of these apply: a plain FHIR query, using backend services, is usually the right default.
-
-Why this order? The first questions are about people and scale, and they’re the hardest constraints to change later. The last ones are about timing, and you have more flexibility there.
-
-One warning: this tree gives you the main pattern for each data flow. A real product usually has several data flows. That’s exactly what the next slide shows.</aside>
+<aside>• Ask in this order. Stop at the first yes.
+• 1 · Alert at a workflow moment? → CDS Hooks.
+• 2 · A person opens an app and logs in? → SMART App Launch.
+• 3 · Thousands of patients at once? → Bulk export.
+• 4 · Fixed snapshot to another organization? → C-CDA.
+• 5 · React the moment something happens? → HL7 v2 feed.
+• None of these? → FHIR query with backend services.
+• People and scale come first — they're hardest to change later.
+• This gives the pattern for one data flow. Real products have several.</aside>
 </section>

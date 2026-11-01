@@ -23,17 +23,12 @@
 <p style="font-size:24px;color:#E6F2F0">Clinician apps, patient apps</p>
 </div>
 </div>
-<aside>Now the distinction that confuses more teams than any other.
-
-Someone says “we’re building a FHIR integration.” That sentence is incomplete, because there are two very different ways to authorize access to FHIR — and you need to know which one before you design anything.
-
-The question is simple: does a person log in?
-
-If no — it’s system to system — you use SMART Backend Services. Your service signs a JSON Web Token with its private key, the authorization server returns an access token, and your service calls the FHIR API. No human is involved. That’s how your pipelines, your feature jobs and your bulk exports work. You’ll implement exactly this with JWT client assertion in Track C.
-
-If yes — a person logs in — you use SMART App Launch. A clinician opens your app from inside the EHR, or a patient opens it on their phone. They log in with OAuth 2.0, and your app receives a token plus the context: which user, and which patient. Then it calls FHIR on that user’s behalf, limited to what they’re allowed to see.
-
-Same FHIR API underneath. Completely different security model, registration process and testing.
-
-Answer this question early. Teams that find out halfway through a build lose weeks re-doing their auth.</aside>
+<aside>• The distinction that confuses most teams.
+• “We're building a FHIR integration” — which kind?
+• Ask: does a person log in?
+• No → SMART Backend Services. Your service signs a JWT and gets a token. No human.
+• Used by pipelines, feature jobs, Bulk export. You'll build it in Track C.
+• Yes → SMART App Launch. User opens the app, logs in with OAuth, app gets patient context.
+• Same FHIR API. Different security, registration and testing.
+• Decide early. Finding out mid-build costs weeks.</aside>
 </section>

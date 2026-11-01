@@ -12,13 +12,14 @@
 <p style="font-size:24px"><b>PV1-36</b> disposition — standard code?</p>
 <p style="font-size:24px"><b>PV1-45</b> discharge time — present?</p>
 </div>
-<aside>Step four is where this exercise gets hands-on.
-
-In the resources you’ll find a file with five HL7 v2 discharge messages — ADT A03 — from Lakeside’s test system. The patients are fictional.
-
-On screen is the first message, and it’s a clean one. I’ve highlighted the four fields to check. MSH-10, the message control ID — it should be unique for every message. PID-3, the patient’s MRN. PV1-36, the discharge disposition — 01 means discharged home. And PV1-45, the discharge date and time.
-
-You don’t need to know HL7 v2 in depth yet; that’s Track B. To find a field, count the pipe characters. One tip: in the MSH segment, the first pipe is itself field one.
-
-Now open the file and check the other four messages. Every problem you find is a real decision for your IDD: what happens to that message, who gets alerted, and which assumption you now have to test. Find at least three.</aside>
+<aside>• Step 4 is the hands-on part.
+• Five HL7 v2 discharge messages, ADT A03. Patients are fictional.
+• This first one is clean. Check the four highlighted fields.
+• MSH-10: control ID. Should be unique.
+• PID-3: the patient's MRN.
+• PV1-36: discharge disposition. 01 means home.
+• PV1-45: discharge date and time.
+• Count the pipes to find a field. In MSH, the first pipe is field one.
+• Check the other four messages. Find at least three problems.
+• Each problem becomes a row in your IDD.</aside>
 </section>

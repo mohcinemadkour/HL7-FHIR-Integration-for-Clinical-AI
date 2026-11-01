@@ -27,13 +27,11 @@
 </ul>
 </div>
 </div>
-<aside>Now scope. How much data should move?
-
-The most common failure here is scope creep. You start with a clear goal, then someone says “while we’re at it, let’s also pull the allergies, the imaging, the whole history.” Every extra field is more mapping, more testing, more to maintain, and more protected health information to secure.
-
-ML engineers are especially prone to this, because more features feel like a better model. Resist it. Start with the minimum the model and workflow need, and add later with evidence.
-
-Sort every field into three buckets. Must, for version one: for sepsis, the core vitals, three labs, and admit and transfer events. Later, for version two: antibiotic orders, the problem list, note text for NLP. And out of scope: imaging, billing codes, the full chart history.
-
-The out-of-scope list is the one people skip, and it’s the one that protects you. When someone asks in month three “why don’t we have imaging?”, you point to the signed IDD.</aside>
+<aside>• How much data should move? The minimum.
+• Every extra field means more mapping, testing, maintenance and PHI to secure.
+• ML engineers: more features feel better. Add them later, with evidence.
+• Must, version 1: core vitals, three labs, admit and transfer events.
+• Later, version 2: antibiotic orders, problem list, note text.
+• Out of scope: imaging, billing codes, full history.
+• The out-of-scope list protects you when someone asks in month three.</aside>
 </section>

@@ -30,13 +30,12 @@
 <p style="font-size:24px;background:#E9EEF0;padding:12px 24px;border-radius:999px"><b>ICD-10</b> diagnoses for billing</p>
 <p style="font-size:24px;background:#E9EEF0;padding:12px 24px;border-radius:999px"><b>UCUM</b> units</p>
 </div>
-<aside>Next: codes. Moving data is easy. Making sure it means the same thing on both sides is the hard part.
-
-Hospitals send local codes. One site calls lactate “LACT”, another “LACTIC”, a third uses a number. If your model is trained on one site’s codes and deployed at another, it silently gets nothing — or the wrong thing.
-
-So every clinical concept gets mapped to a standard code. Labs and vitals go to LOINC: lactate, creatinine and heart rate here. Problems and findings go to SNOMED CT. Medications go to RxNorm. ICD-10 is mainly for diagnoses on the billing side. And don’t forget units: UCUM, so that milligrams per deciliter never gets mixed up with micromoles per liter.
-
-For AI teams this is not a detail. Your features are defined by these codes. If the mapping is wrong, your model is wrong — with no error message.
-
-The mapping table goes in the IDD, owned by the interface team, reviewed by someone clinical.</aside>
+<aside>• Moving data is easy. Making it mean the same thing is hard.
+• Hospitals send local codes: LACT, LACTIC, or a number.
+• A model trained on one site's codes gets nothing at another site.
+• Map every concept to a standard code.
+• LOINC for labs and vitals. SNOMED CT for problems. RxNorm for meds.
+• ICD-10 for billing diagnoses. UCUM for units.
+• Wrong mapping = wrong model, with no error message.
+• The mapping table goes in the IDD.</aside>
 </section>

@@ -22,19 +22,12 @@
 </div>
 </div>
 </div>
-<aside>Question two: is the data there, on time, and trustworthy?
-
-This is where ML engineers usually feel at home, but in a hospital the traps are different.
-
-Latency first. Your decision has a window. If the nurse decides at the vitals check, and the data you need arrives two hours later, the integration is useless — no matter how good the model is.
-
-Completeness. Don’t trust the data dictionary. Pull a real sample, de-identified, and measure how often the field is actually filled in. A field that exists in the schema and is empty for half the patients is a very different input.
-
-Coding. Are labs coded in LOINC, or in local codes that change from site to site? That decides how much mapping work — and mapping maintenance — you’re signing up for.
-
-And the source of truth. If the same value lives in three systems, pick one and write it down.
-
-The Stop signal: the data arrives after the decision is made. An interface can’t fix that, and neither can a better model. Garbage in, garbage out — and late in is just as bad.
-
-On the sepsis pipeline, I’d score this Caution. Vitals are charted on time. Lactate is the problem: turnaround varies, so at the moment of scoring it’s often missing. That’s not a Stop — it’s a requirement. The model has to handle a missing lactate, and you’ll do exactly that in Track C, when we build features from FHIR.</aside>
+<aside>• Question two: is the data there, on time, and trustworthy?
+• Latency: does it arrive inside the decision window?
+• Completeness: pull a real sample and measure. Don't trust the data dictionary.
+• Coding: LOINC, or local codes that change site to site?
+• Source of truth: if a value lives in three systems, pick one.
+• Stop signal: the data arrives after the decision is made.
+• Sepsis: Caution. Vitals are on time; lactate often isn't.
+• That becomes a requirement: the model must handle a missing lactate.</aside>
 </section>

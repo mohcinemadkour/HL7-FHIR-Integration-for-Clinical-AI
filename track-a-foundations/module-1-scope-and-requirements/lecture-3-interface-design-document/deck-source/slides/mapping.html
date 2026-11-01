@@ -38,19 +38,13 @@
 <td style="padding:16px 24px">ISO 8601 with time zone</td>
 </tr>
 </table>
-<aside>Section three is the mapping. Here’s what it looks like for one lab result going from an HL7 v2 ORU message to a FHIR Observation.
-
-PID-3, the patient identifier, becomes the subject — we look up the FHIR Patient by MRN, which is the matching rule we just decided.
-
-OBX-3, the test code, becomes Observation dot code — mapped from the local code to LOINC with the mapping table.
-
-OBX-5, the value, becomes valueQuantity dot value. It must be numeric, and if it’s empty, we reject the message.
-
-OBX-6, the units, map to a UCUM code.
-
-OBX-11, the result status: preliminary, final, corrected. Pay attention to this one. When a lab corrects a result, your features must update — otherwise your model scores the wrong value.
-
-And OBX-14, the observation time, becomes effectiveDateTime, in ISO 8601 with a time zone. Get the time zone wrong and your time-window features are off by hours.
-
-The interface team usually owns this table. Your job is to review it with model features in mind. You’ll build this exact mapping in Mirth in Track B.</aside>
+<aside>• Section 3: one lab result, HL7 v2 to FHIR.
+• PID-3 → subject. Look up the patient by MRN.
+• OBX-3 → code. Local code to LOINC.
+• OBX-5 → value. Numeric; reject if empty.
+• OBX-6 → units, as UCUM.
+• OBX-11 → status. Corrected results must update your features.
+• OBX-14 → time, with time zone. Wrong zone = features off by hours.
+• Interface team owns it. You review it with your features in mind.
+• You'll build this mapping in Mirth in Track B.</aside>
 </section>

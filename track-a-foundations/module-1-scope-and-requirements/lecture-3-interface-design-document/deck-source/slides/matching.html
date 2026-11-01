@@ -23,11 +23,12 @@
 <p style="font-size:28px"><b>Too loose</b> → another patient’s data → wrong prediction</p>
 </div>
 </div>
-<aside>The next scoping decision is identity. When a message arrives, the receiving system has to answer: is this the same patient?
-
-There are three approaches. A shared identifier — both systems use the same medical record number. That’s the cleanest, and it’s what you’ll usually have inside one health system. Deterministic matching — a set of fields must match exactly, like MRN, name and date of birth. And probabilistic matching — an algorithm scores several fields and accepts a match above a threshold, with a human reviewing the uncertain ones.
-
-Here’s why it matters for AI. Make the rules too strict and real matches get dropped, so your model sees missing features. Make them too loose and one patient’s lab ends up in another patient’s record — and your model makes a confident prediction on the wrong person. That’s a safety issue.
-
-So matching is not a config detail. It goes in the IDD as a decision, with the rule and the owner. For sepsis, inside one hospital, we match on the MRN in PID-3.</aside>
+<aside>• Is this the same patient?
+• Shared identifier: same MRN in both systems. Cleanest.
+• Deterministic: exact match on MRN, name, date of birth.
+• Probabilistic: a score across fields, with human review.
+• Too strict → real matches dropped → missing features.
+• Too loose → another patient's data → wrong prediction. A safety issue.
+• Write the rule and the owner in the IDD.
+• Sepsis: one hospital, match on the MRN in PID-3.</aside>
 </section>

@@ -24,19 +24,11 @@
 </div>
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#B8C7D3">Next: Lecture 3 — Write the Interface Design Document</p>
-<aside>Let’s check your answers.
-
-Case A, the ICU transfer: an HL7 v2 feed. It’s an event, and you need to react the moment it happens. Specifically, it’s an ADT A02 — a patient transfer message.
-
-Case B, the risk-trend app: SMART App Launch. A nurse opens it from the chart, logs in, and the app gets the patient context from the EHR.
-
-Case C, retraining: Bulk export. Two years of encounters for the whole hospital is a population-level job, run with backend services. Please don’t try this with thousands of individual FHIR queries — you’ll hit rate limits, and the interface team will not be happy with you.
-
-Case D, the drug interaction warning: CDS Hooks, on the order-sign hook. It’s advice at a specific moment in the workflow, before the order is final.
-
-If you got all four, great. If you missed one, go back to the decision tree and see which question you skipped.
-
-Post your answers — and any case from your own work you’re unsure about — in the Q&A.
-
-In the next lecture, we take everything from this module — the Build Decision Record and the patterns you chose — and turn it into the Interface Design Document. See you there.</aside>
+<aside>• A, ICU transfer: HL7 v2 feed. It's an event — ADT A02.
+• B, risk-trend app: SMART App Launch. A nurse logs in, patient in context.
+• C, retraining: Bulk export. Don't send thousands of single FHIR queries.
+• D, drug interaction: CDS Hooks, on order-sign.
+• Missed one? Find the tree question you skipped.
+• Post your answers — and your own tricky cases — in the Q&A.
+• Next: the Interface Design Document.</aside>
 </section>

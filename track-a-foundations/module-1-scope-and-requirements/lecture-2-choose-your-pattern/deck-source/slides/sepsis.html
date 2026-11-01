@@ -32,13 +32,12 @@
 <text x="1212" y="250" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#4A5563">model updates</text>
 <text x="0" y="480" font-family="JetBrains Mono, Courier New, monospace" font-size="24" fill="#4A5563">BATCH PATH · EVERY NIGHT</text>
 </svg>
-<aside>Let’s put it all together with the pipeline you’ll build in this course: the real-time sepsis risk pipeline.
-
-Look at the top row — the real-time path. The EHR pushes HL7 v2 messages, admissions and lab results, to Mirth. That’s pattern one, push. Mirth transforms them into FHIR resources and writes them to our FHIR server. The sepsis model queries that FHIR server for the features it needs — that’s the FHIR query pattern, using backend services, because no human logs in. And the result reaches the clinician as a CDS Hooks card in the EHR.
-
-Now the bottom row — the batch path. Every night, we run a Bulk export to pull the population-level data we need for training and for drift monitoring. When we see drift, we revalidate and update the model.
-
-So that’s four patterns in one product: HL7 v2, FHIR query, CDS Hooks, and Bulk export. Each one was picked by the three questions: what triggers it, who’s in the loop, and how many patients.
-
-This is the normal case. When someone asks you “is it HL7 or FHIR?”, the honest answer is usually “both — for different flows.” Your job is to pick the right pattern for each flow, and document it in the Interface Design Document, which is our next lecture.</aside>
+<aside>• Our sepsis pipeline uses four patterns.
+• Top row, real time: EHR pushes HL7 v2 to Mirth.
+• Mirth writes FHIR resources to our FHIR server.
+• The model queries FHIR for features — backend services, no human.
+• The result reaches the clinician as a CDS Hooks card.
+• Bottom row, nightly: Bulk export for training and drift monitoring.
+• “Is it HL7 or FHIR?” Usually: both, for different flows.
+• You document each flow's pattern in the IDD — next lecture.</aside>
 </section>

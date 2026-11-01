@@ -24,19 +24,12 @@
 <div style="background:#E08A3C;color:#0F1E2E;border-radius:16px;padding:28px 40px">
 <p style="font-size:28px;line-height:1.4"><b>The AI-specific failure:</b> the feed stops quietly and the model keeps scoring stale data. Alert on data freshness, not just errors.</p>
 </div>
-<aside>Section five: what happens when it fails. Because it will.
-
-Plan for three kinds of errors.
-
-Validation errors: the message itself is wrong — say OBX-5, the value, is empty. Reject it to an error queue, and an interface analyst reviews the queue every day.
-
-Business-rule errors: the message is valid, but it breaks a rule — the MRN doesn’t match any patient yet, maybe because the admission hasn’t arrived. Hold it, retry, and if it still fails, send it for review.
-
-System errors: the other side is down — the FHIR server times out. Retry with backoff, and page on-call if it keeps failing.
-
-For each type, the IDD answers three questions: what happens to the message, who gets alerted, and how it gets resolved. And log everything, successes and failures, for audit.
-
-Now the failure that’s specific to AI, in orange. The feed stops quietly. No errors — just no new messages. The model keeps running and keeps producing scores, on data that’s hours old. Nobody notices.
-
-So monitor freshness: alert when you haven’t received a message in longer than normal. That one alert has saved more pipelines than any error handler.</aside>
+<aside>• Section 5: what happens when it fails. It will.
+• Validation error: the message is wrong. Reject to an error queue; review daily.
+• Business-rule error: valid, but breaks a rule — unknown MRN. Hold, retry, review.
+• System error: the other side is down. Retry with backoff; page if it persists.
+• For each: what happens, who's alerted, how it's resolved.
+• Log everything, success and failure.
+• The AI-specific failure: the feed stops quietly, the model scores stale data.
+• Alert on data freshness, not just errors.</aside>
 </section>
