@@ -39,7 +39,7 @@ Score each question **Go**, **Caution** or **Stop**, with a one-line reason.
 ## 5. Verdict: Build / Pilot / Don't build yet
 
 - **Build:** all Go, or each Caution has a written fix
-- **Pilot:** two or more Cautions — one unit, small scope, fixed end date
+- **Pilot:** two or more Cautions — test it on one ward only, with a fixed end date, then decide
 - **Don't build yet:** any Stop
 
 ## 6. Alternative offered (if not a full build)

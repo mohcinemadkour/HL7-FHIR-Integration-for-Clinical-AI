@@ -1,7 +1,7 @@
 # Module 1 · Lecture 1 — Should you build this integration?
 
 Recording script — the speaker notes from each slide, in order.
-About 1306 words, roughly 9 minutes at a natural pace.
+About 1339 words, roughly 10 minutes at a natural pace.
 
 
 ## Slide 1 — Should you build this integration?
@@ -137,7 +137,9 @@ About 1306 words, roughly 9 minutes at a natural pace.
 
 - Five scores become one decision.
 - Build: all Go, or each Caution has a written fix.
-- Pilot: two or more Cautions. One unit, small scope, fixed end date.
+- Pilot: two or more Cautions. Promising, but with real unknowns.
+- Try it on one ward only — not the whole hospital — with a fixed end date, say 60 days.
+- On that date, check your metrics: build it fully, adjust it, or stop.
 - Don't build yet: any Stop. Fix it, or take a lighter path.
 - Must-haves (regulation, safety): run the check anyway. It shapes how you build.
 - Sepsis: Go, Caution, Go, Go, Go → Build, with missing-lactate handling.
