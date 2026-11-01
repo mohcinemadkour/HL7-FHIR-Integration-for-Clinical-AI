@@ -1,7 +1,7 @@
 # Module 1 · Lecture 1 — Should you build this integration?
 
 Recording script — the speaker notes from each slide, in order.
-About 2790 words, roughly 20 minutes at a natural pace.
+About 2676 words, roughly 19 minutes at a natural pace.
 
 
 ## Slide 1 — Should you build this integration?
@@ -78,15 +78,16 @@ I’ll run each question on our sepsis pipeline.
 
 ## Slide 7 — What decision changes — and who acts on it?
 
-Question one: what decision changes, and who acts on it?
-
-On the left are the four things you need to write down. First, the person who acts — a role, not “the care team.” Second, the moment in their workflow where they act. Third, how often that moment happens — every shift for every patient is very different from once a month. Fourth, the stakes. Rank the problem: patient safety first, then revenue and compliance, then convenience. Convenience is real, but on its own it rarely justifies a real-time integration.
-
-The Stop signal is the vague answer. If the best anyone can say is “clinicians will find it useful,” you don’t have a use case yet. Go back to the requester and ask: who, when, and what will they do differently?
-
-Here’s the sepsis pipeline. The person is the rapid response nurse. The moment is the routine vitals check. The decision is whether to escalate — call the physician, start the sepsis workup — earlier than they would have. It happens for many patients, every shift, and it’s a safety issue. That’s a clear Go.
-
-If you take one thing from this slide: a use case is a person, a moment and an action. If you can’t fill in all three, stop here.
+• Question one: what decision changes, and who acts on it?
+• Write down four things.
+• One: the person who acts. A role, not “the care team.”
+• Two: the moment in their workflow.
+• Three: how often it happens.
+• Four: the stakes. Safety first, then revenue and compliance, then convenience.
+• Stop signal: “clinicians will find it useful.” That’s not a use case yet.
+• Sepsis example: the rapid response nurse, at the vitals check, escalates earlier.
+• Every shift, safety-critical. A clear Go.
+• Remember: a person, a moment, an action. Missing one? Stop here.
 
 ## Slide 8 — Is the data there, on time, and trustworthy?
 
