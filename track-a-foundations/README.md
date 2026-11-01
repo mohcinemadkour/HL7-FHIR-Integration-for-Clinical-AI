@@ -16,3 +16,5 @@ No code in this track, on purpose: learners decide what to build before they bui
 Learners take one request — the readmission scenario — through all of Module 1 and hand in four deliverables: a Build Decision Record, a pattern map, an Interface Design Document, and a review of five synthetic HL7 v2 discharge messages. About four hours, no code. See the [exercise brief](hands-on/README.md).
 
 **How to use the resources:** see [resources/README.md](resources/README.md).
+
+**Worked practice example:** [medication reconciliation](resources/07-worked-example-medication-reconciliation.md) — every Module 1 template filled in, with a note on each choice.

@@ -1,6 +1,6 @@
 # Track A Resources — How to Use Them
 
-Six resources: two templates, two worked examples, a practice scenario and a cheat sheet. Together they take a request from “can you build this?” to a signed design.
+Seven resources: two templates, three worked examples, a practice scenario and a cheat sheet. Together they take a request from “can you build this?” to a signed design.
 
 ## The flow
 
@@ -20,6 +20,8 @@ Request ──► Build Decision Record ──► Pattern choice ──► Inter
 | 4 | [Pattern cheat sheet](04-pattern-cheat-sheet.md) | Choosing how each data flow moves | List the data flows first. Then, for each flow, ask the decision-tree questions in order and stop at the first yes. One pattern per flow; most products need two to four. |
 | 5 | [Interface Design Document — template](05-interface-design-document-template.md) | Your request passed the Build Check (Build or Pilot) | Copy sections 1 and 7 from your Build Decision Record. Write sections 2–6 with the interface team. Keep it to a few pages; leave unknowns as `[fill in]` — they become your question list. |
 | 6 | [Interface Design Document — sepsis example](06-interface-design-document-sepsis-example.md) | After drafting your own IDD | Compare, then revise. Note the level of detail in section 2 (versions, scopes, transport) and section 5 (one row per error type, plus a freshness alert). |
+
+| 7 | [Worked practice example — medication reconciliation](07-worked-example-medication-reconciliation.md) | Before your first assignment, or when a template field feels unclear | Read it top to bottom once. Every filled-in section has a **Why** note explaining the choice. It ends in **Pilot** and uses SMART App Launch and C-CDA — the patterns the sepsis example doesn't cover. |
 
 ## Using them at work
 
