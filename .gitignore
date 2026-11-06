@@ -1,0 +1,5 @@
+# PowerPoint decks are not kept in this repo
+*.pptx
+*.ppt
+*.potx
+*.ppsx

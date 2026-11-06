@@ -51,7 +51,6 @@ track-d-ai-integration-deployment/
 
 Each lecture folder has:
 
-- **A PowerPoint file (`.pptx`)** — the latest version of the deck, with speaker notes. One image per slide, so it looks exactly like the original.
 - `script.md` — the recording script: the speaker notes for every slide, in order.
 - `deck-source/` — the slide source (`deck.json` plus one HTML file per slide). The presentable decks live as Claude Slides artifacts and export to PowerPoint or PDF. Images in the source point to artifact storage and don't render on GitHub.
 
@@ -75,15 +74,7 @@ All hospitals, names and figures in the examples are fictional and illustrative.
 
 ## Presentations (PowerPoint)
 
-| Deck | File |
-| --- | --- |
-| M0 — This is not a passive course | [pptx](track-a-foundations/module-0-start-here/Module-0-This-Is-Not-a-Passive-Course.pptx) |
-| M1 · L1 — Should you build this integration? | [pptx](track-a-foundations/module-1-scope-and-requirements/lecture-1-should-you-build/Module-1-Lecture-1-Should-You-Build-This-Integration.pptx) |
-| M1 · L2 — Choose your pattern | [pptx](track-a-foundations/module-1-scope-and-requirements/lecture-2-choose-your-pattern/Module-1-Lecture-2-Choose-Your-Pattern.pptx) |
-| M1 · L3 — Write the Interface Design Document | [pptx](track-a-foundations/module-1-scope-and-requirements/lecture-3-interface-design-document/Module-1-Lecture-3-Write-the-Interface-Design-Document.pptx) |
-| Track A hands-on | [pptx](track-a-foundations/hands-on/Track-A-Hands-on-Scope-the-Readmission-Integration.pptx) |
-
-To rebuild every PowerPoint from the slide sources: `python tools/build_pptx.py` (needs `python-pptx` and Playwright with Chromium).
+PowerPoint files are not stored in this repo. To build them locally from the slide sources: `python tools/build_pptx.py` (needs `python-pptx` and Playwright with Chromium).
 
 ## Status
 
